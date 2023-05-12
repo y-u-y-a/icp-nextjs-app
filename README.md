@@ -75,7 +75,7 @@ Internet Computer has the concept of [Canister](https://smartcontracts.org/docs/
 
 - hello (backend)
 - image (backend)
-- hello_assets (frontend)
+- frontend (frontend)
 
 Canister configurations are stored in dfx.json.
 
@@ -97,7 +97,7 @@ To generate UI declarations:
 dfx generate
 ```
 
-It will generate files in src/declarations for each canister. In our case, it is image, hello and hello_assets but we only need the backend canister image and hello UI declarations here.
+It will generate files in src/declarations for each canister. In our case, it is image, hello and frontend but we only need the backend canister image and hello UI declarations here.
 
 The next step is to adapt it to work with Next.js.
 The final adapted code is in ui/declaration/hello/index.js.
@@ -194,20 +194,20 @@ In order to simulate the whole Internet Computer experience, you can deploy and 
 ```bash
 dfx start --background
 npm run build
-dfx deploy hello_assets
+dfx deploy frontend
 ```
 
-**hello_assets** is the frontend canister defined in dfx.json.
+**frontend** is the frontend canister defined in dfx.json.
 
-**npm run build** builds and export Next.js as static code storing in **/out** folder which would be picked up by **dfx deploy hello_assets** as defined in dfx.json with **/out** as the source.
+**npm run build** builds and export Next.js as static code storing in **/out** folder which would be picked up by **dfx deploy frontend** as defined in dfx.json with **/out** as the source.
 
 When it completes, you can open Chrome and browse to:  
 http://localhost:8000/?canisterId=[canisterId]
 
-Replace [canisterId] with the hello_assets canister ID which you can find by running:
+Replace [canisterId] with the frontend canister ID which you can find by running:
 
 ```bash
-dfx canister id hello_assets
+dfx canister id frontend
 ```
 
 ## Environment Configuration
@@ -244,7 +244,7 @@ To do that you will need:
 Follow the [Network Deployment](https://internetcomputer.org/docs/current/developer-docs/setup/cycles/cycles-wallet/) guide to create a wallet.  
 Dfinity offers [free cycle](https://faucet.dfinity.org/) to developers.
 
-Now, you can deploy your Next.js Dapp to Internet Computer IC network by adding **--network ic** to the dfx subcommand. We will first update our env var to point to IC network host. Then deploy the backend canister first, export Next.js static code and deploy frontend canister **hello_assets**.
+Now, you can deploy your Next.js Dapp to Internet Computer IC network by adding **--network ic** to the dfx subcommand. We will first update our env var to point to IC network host. Then deploy the backend canister first, export Next.js static code and deploy frontend canister **frontend**.
 
 ```bash
 cp .env.icprod .env.production
@@ -252,10 +252,10 @@ dfx deploy --network ic
 ```
 
 Open Chrome and go to https://[canisterId].raw.ic0.app/  
-Replace [canisterId] by the hello_assets canister id in the IC network. You can find it by running:
+Replace [canisterId] by the frontend canister id in the IC network. You can find it by running:
 
 ```bash
-dfx canister --network ic id hello_assets
+dfx canister --network ic id frontend
 ```
 
 Congratulations !! Well Done !! 👏 🚀 🎉

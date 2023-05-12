@@ -6,13 +6,19 @@
     "image": {
       "main": "backend/service/Image.mo"
     },
-    "hello_assets": {
+    "frontend": {
       "dependencies": ["hello"],
       "frontend": {
         "entrypoint": "out/index.html"
       },
       "source": ["out"],
       "type": "assets"
+    }
+  },
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
     }
   },
   "dfx": "0.13.1",

@@ -1,15 +1,8 @@
 {
-  "name": "nextjs_ic_template",
-  "version": "0.4.0",
-  "author": "Henry Chan",
+  "name": "icp-nextjs-app",
+  "version": "1.0.0",
+  "author": "yuya",
   "description": "Next.js Internet Computer Starter Template",
-  "keywords": [
-    "nextjs",
-    "internet computer",
-    "icp",
-    "starter",
-    "dfinity"
-  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
