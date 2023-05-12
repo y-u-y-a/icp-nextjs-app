@@ -1,13 +1,9 @@
-/* eslint-disable @next/next/no-img-element */
-// Next, React
 import Head from "next/head"
+import { NextPage } from "next/types"
 
-import styles from "../src/styles/Home.module.css"
+import styles from "@/styles/Home.module.css"
 
-import { GreetingSection } from "../src/components/GreetingSection"
-import { ImageSection } from "../src/components/ImageSection"
-
-function HomePage() {
+const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
@@ -17,14 +13,13 @@ function HomePage() {
         <h3 className={styles.title}>
           Welcome to Next.js Internet Computer Starter Template!
         </h3>
-
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/logo.png" alt="DFINITY logo" className={styles.logo} />
-
-        <GreetingSection />
-        <ImageSection />
+        {/* <GreetingSection />
+        <ImageSection /> */}
       </main>
     </div>
   )
 }
 
-export default HomePage
+export default Home
