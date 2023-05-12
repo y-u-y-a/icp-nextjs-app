@@ -30,6 +30,8 @@ ps:
 balance:
 	dfx wallet --network ic balance
 
-.PHONY: dev
+.PHONY: dev build
 dev:
 	npm run dev
+build:
+	npm run build
