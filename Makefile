@@ -1,4 +1,4 @@
-.PHONY: init up down generate
+.PHONY: init up down generate test
 init:
 	rm -rf .dfx .next out
 	npm install
