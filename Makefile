@@ -12,12 +12,10 @@ down:
 # dfx.jsonの"canisters"をデプロイする
 deploy:
 	dfx deploy
-# frontend/内で使用する関数を、デプロイされたcanistersから./src/declarationsを作成する
+# フロントで使用する関数を、デプロイされたcanistersから./src/declarationsに作成する
 generate:
-	rm -rf ./frontend/declarations/hello
 	dfx generate hello
-	mkdir ./frontend/declarations && mv ./src/declarations/hello ./frontend/declarations/hello
-	rm -rf ./src
+	dfx generate image
 # デプロイされたcanisterをテストする
 # dfx canister call [CABISTER_NAME] [CANISTER_METHOD] (arg_1, arg_2. ...)
 test:

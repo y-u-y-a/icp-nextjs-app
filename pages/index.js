@@ -2,10 +2,10 @@
 // Next, React
 import Head from "next/head"
 
-import styles from "../ui/styles/Home.module.css"
+import styles from "../src/styles/Home.module.css"
 
-import { GreetingSection } from "../ui/components/GreetingSection"
-import { ImageSection } from "../ui/components/ImageSection"
+import { GreetingSection } from "../src/components/GreetingSection"
+import { ImageSection } from "../src/components/ImageSection"
 
 function HomePage() {
   return (
