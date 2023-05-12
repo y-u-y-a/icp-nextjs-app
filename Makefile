@@ -1,6 +1,6 @@
 .PHONY: init up down generate test
 init:
-	rm -rf .dfx .next out
+	rm -rf .dfx .next out node_modules
 	npm install
 # ローカルにdfxサーバーを開始する
 up:
@@ -8,6 +8,7 @@ up:
 # ローカルのdfxサーバーを停止する
 down:
 	dfx stop
+	rm -rf .dfx .next out
 # キャニスターの作成&WASMを配置している
 # dfx.jsonの"canisters"をデプロイする
 deploy:
